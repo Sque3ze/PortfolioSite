@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Saldivar - Data Scientist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">JS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="typing-container">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="name-highlight">Joseph!</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </p>
+                </div>
+                <p class="hero-description">
+                    Transforming complex data into actionable insights through machine learning, 
+                    advanced analytics, and scalable database solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="assets/DataScientist_JosephSaldivar.pdf" class="btn btn-outline">Download Resume</a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:josepha@berkeley.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/josephasaldivar"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-card" data-skill="Python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-card" data-skill="SQL">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="floating-card" data-skill="ML">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="floating-card" data-skill="Analytics">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Data Science graduate from UC Berkeley with hands-on experience in machine learning, 
+                        database design, and full-stack development. Currently enhancing AI systems at Data Annotation. Contact me below!
+                    </p>
+                </div>
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Languages & Frameworks</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Data Science & ML</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">NumPy</span>
+                                <span class="skill-tag">Scikit-Learn</span>
+                                <span class="skill-tag">Matplotlib</span>
+                                <span class="skill-tag">Seaborn</span>
+                                <span class="skill-tag">Plotly</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Databases & Tools</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Jupyter</span>
+                                <span class="skill-tag">VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="database">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Database Management System</h3>
+                        <p>Production-ready relational database for Cal Field Hockey with 62 normalized tables and analytics pipeline.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Random Forest</span>
+                        </div>
+                        <a href="projects/project1.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="gaming">
+                    <div class="project-image">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gaming Data Extraction & Analytics</h3>
+                        <p>ML-powered weapon classification system using computer vision and clustering algorithms on 24+ hours of gameplay data.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">K-Means</span>
+                            <span class="tech-tag">OCR</span>
+                        </div>
+                        <a href="projects/project2.html" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="housing">
+                    <div class="project-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cook County Housing Analysis - (Under Construction)</h3>
+                        <p>Comprehensive analysis of 200K+ property records with predictive modeling for accurate price estimation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Linear Regression</span>
+                        </div>
+                        <a href="#projects" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>josepha@berkeley.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(559) 385-3832</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Berkeley, California</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Joseph Saldivar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
