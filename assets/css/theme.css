@@ -1,12 +1,12 @@
 /* Theme tokens shared across pages. Edit these six to restyle. */
 :root {
   /* Primary 6 parameters */
-  --theme-primary: #164ea9;
-  --theme-surface: #023047;
-  --theme-text: #ffb703;
-  --theme-muted: #8ecae6;
-  --theme-accent: #219ebc;
-  --theme-accent-alt: #ffb703;
+  --theme-primary: #0E141B;
+  --theme-surface: #0e1318;
+  --theme-text: #E6E8EB;
+  --theme-muted: #bfc1c7;
+  --theme-accent: #8fccc4;
+  --theme-accent-alt: #1e4939;
 
   /* Bridged variables used throughout styles */
   --bg: var(--theme-surface);
@@ -14,7 +14,7 @@
   --muted: var(--theme-muted);
   --border: var(--theme-muted);
   --border-hover: var(--theme-primary);
-  --shadow: rgba(0,0,0,0.35);
+  --shadow: rgba(0,0,0,0.55);
   --surface: color-mix(in srgb, var(--theme-text) 6%, transparent);
   --surface-hover: color-mix(in srgb, var(--theme-text) 10%, transparent);
   --inner-highlight: color-mix(in srgb, var(--theme-text) 5%, transparent);
@@ -24,4 +24,64 @@
 
   /* Motion curve */
   --timing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  --bg: #05060a;
+  --fg: #f7f8fb;
+  --muted: rgba(247,248,251,0.64);
+  --border: rgba(247,248,251,0.14);
+  --border-hover: rgba(247,248,251,0.30);
+  --shadow: rgba(0,0,0,0.40);
+  --surface: rgba(255,255,255,0.06);
+  --surface-hover: rgba(255,255,255,0.10);
+  --inner-highlight: rgba(255,255,255,0.05);
+  --sheen-linear: rgba(255,255,255,0.10);
+  --sheen-radial: rgba(255,255,255,0.08);
+  --dot-hover: rgba(255,255,255,0.45);
+}
+
+:root[data-theme="dim"] {
+  --bg: #0c0f14;
+  --fg: #e9edf6;
+  --muted: rgba(233,237,246,0.60);
+  --border: rgba(233,237,246,0.16);
+  --border-hover: rgba(233,237,246,0.28);
+  --shadow: rgba(0,0,0,0.38);
+  --surface: rgba(255,255,255,0.07);
+  --surface-hover: rgba(255,255,255,0.12);
+  --inner-highlight: rgba(255,255,255,0.05);
+  --sheen-linear: rgba(255,255,255,0.10);
+  --sheen-radial: rgba(255,255,255,0.08);
+  --dot-hover: rgba(255,255,255,0.42);
+}
+
+:root[data-theme="midnight"] {
+  --bg: #050510;
+  --fg: #e9eaff;
+  --muted: rgba(233,234,255,0.62);
+  --border: rgba(233,234,255,0.16);
+  --border-hover: rgba(233,234,255,0.34);
+  --shadow: rgba(0,0,20,0.50);
+  --surface: rgba(120,130,255,0.06);
+  --surface-hover: rgba(120,130,255,0.12);
+  --inner-highlight: rgba(255,255,255,0.05);
+  --sheen-linear: rgba(200,210,255,0.12);
+  --sheen-radial: rgba(180,190,255,0.10);
+  --dot-hover: rgba(210,220,255,0.55);
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: rgba(0,0,0,0.62);
+  --border: rgba(0,0,0,0.12);
+  --border-hover: rgba(0,0,0,0.28);
+  --shadow: rgba(0,0,0,0.10);
+  --surface: rgba(0,0,0,0.04);
+  --surface-hover: rgba(0,0,0,0.08);
+  --inner-highlight: rgba(255,255,255,0.65);
+  --sheen-linear: rgba(0,0,0,0.10);
+  --sheen-radial: rgba(0,0,0,0.06);
+  --dot-hover: rgba(0,0,0,0.45);
 }

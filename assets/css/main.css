@@ -1,111 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; }
-/*
-  Theme Parameters — edit these six values to restyle the site quickly.
-  - --theme-primary: main brand color
-  - --theme-surface: page background
-  - --theme-text:    default text/heading color
-  - --theme-muted:   subtle lines/secondary text
-  - --theme-accent:  strong emphasis (active slide dot, etc.)
-  - --theme-accent-alt: alternate emphasis (hover/focus of slide dot)
-*/
-:root {
-  /* Edit only these six */
-
-  /*
-  --theme-primary:     #164ea9;
-  --theme-surface:     #023047;
-  --theme-text:        #ffb703;
-  --theme-muted:       #9dd4ed;
-  --theme-accent:      #219ebc;
-  --theme-accent-alt:  #ffb703;
-  */
-  
-  --theme-primary:     #0E141B;
-  --theme-surface:     #0B0F13;
-  --theme-text:        #E6E8EB;
-  --theme-muted:       #6B7280;
-  --theme-accent:      #2DD4BF;
-  --theme-accent-alt:  #34D399;
-  
-
-  /* Bridge variables used throughout styles (no need to edit) */
-  --bg: var(--theme-surface);
-  --fg: var(--theme-text);
-  --muted: var(--theme-muted);
-  --border: var(--theme-muted);
-  --border-hover: var(--theme-primary);
-  --shadow: rgba(0,0,0,0.35);
-  --surface: color-mix(in srgb, var(--theme-text) 6%, transparent);
-  --surface-hover: color-mix(in srgb, var(--theme-text) 10%, transparent);
-  --inner-highlight: color-mix(in srgb, var(--theme-text) 5%, transparent);
-  --sheen-linear: color-mix(in srgb, var(--theme-text) 10%, transparent);
-  --sheen-radial: color-mix(in srgb, var(--theme-text) 8%, transparent);
-  --dot-hover: var(--theme-accent-alt);
-
-  /* Motion curve */
-  --timing: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Theme presets — switch by setting <html data-theme="..."> */
-:root[data-theme="dark"] {
-  --bg: #05060a;
-  --fg: #f7f8fb;
-  --muted: rgba(247,248,251,0.64);
-  --border: rgba(247,248,251,0.14);
-  --border-hover: rgba(247,248,251,0.30);
-  --shadow: rgba(0,0,0,0.40);
-  --surface: rgba(255,255,255,0.06);
-  --surface-hover: rgba(255,255,255,0.10);
-  --inner-highlight: rgba(255,255,255,0.05);
-  --sheen-linear: rgba(255,255,255,0.10);
-  --sheen-radial: rgba(255,255,255,0.08);
-  --dot-hover: rgba(255,255,255,0.45);
-}
-
-:root[data-theme="dim"] {
-  --bg: #0c0f14;
-  --fg: #e9edf6;
-  --muted: rgba(233,237,246,0.60);
-  --border: rgba(233,237,246,0.16);
-  --border-hover: rgba(233,237,246,0.28);
-  --shadow: rgba(0,0,0,0.38);
-  --surface: rgba(255,255,255,0.07);
-  --surface-hover: rgba(255,255,255,0.12);
-  --inner-highlight: rgba(255,255,255,0.05);
-  --sheen-linear: rgba(255,255,255,0.10);
-  --sheen-radial: rgba(255,255,255,0.08);
-  --dot-hover: rgba(255,255,255,0.42);
-}
-
-:root[data-theme="midnight"] {
-  --bg: #050510;
-  --fg: #e9eaff;
-  --muted: rgba(233,234,255,0.62);
-  --border: rgba(233,234,255,0.16);
-  --border-hover: rgba(233,234,255,0.34);
-  --shadow: rgba(0,0,20,0.50);
-  --surface: rgba(120,130,255,0.06);
-  --surface-hover: rgba(120,130,255,0.12);
-  --inner-highlight: rgba(255,255,255,0.05);
-  --sheen-linear: rgba(200,210,255,0.12);
-  --sheen-radial: rgba(180,190,255,0.10);
-  --dot-hover: rgba(210,220,255,0.55);
-}
-
-:root[data-theme="light"] {
-  --bg: #ffffff;
-  --fg: #111111;
-  --muted: rgba(0,0,0,0.62);
-  --border: rgba(0,0,0,0.12);
-  --border-hover: rgba(0,0,0,0.28);
-  --shadow: rgba(0,0,0,0.10);
-  --surface: rgba(0,0,0,0.04);
-  --surface-hover: rgba(0,0,0,0.08);
-  --inner-highlight: rgba(255,255,255,0.65);
-  --sheen-linear: rgba(0,0,0,0.10);
-  --sheen-radial: rgba(0,0,0,0.06);
-  --dot-hover: rgba(0,0,0,0.45);
-}
+/* Theme variables live in theme.css so the home page and project pages stay in sync. */
 
 /* Shared visual sizing so About and Projects align */
 :root { --section-visual-size: clamp(160px, 34vw, 320px); }
@@ -159,8 +53,8 @@ body {
   padding-bottom: clamp(8px, 1.8vh, 16px);
   color: var(--fg);
   text-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.35),
-    0 0 18px color-mix(in srgb, var(--fg) 15%, var(--theme-accent) 5%);
+    0 16px 32px rgba(0, 0, 0, 0.32),
+    0 0 18px color-mix(in srgb, var(--fg) 22%, var(--theme-accent) 10%);
 }
 
 @keyframes titleFade {
@@ -355,7 +249,7 @@ body {
   margin-top: -4px;
   opacity: 0; /* hidden until typing starts */
   animation: mutedBreath 7800ms ease-in-out infinite;
-  text-shadow: 0 6px 14px color-mix(in srgb, var(--bg) 70%, transparent);
+  text-shadow: 0 10px 26px color-mix(in srgb, var(--bg) 55%, transparent);
 }
 .subtext.subtext--typing::after {
   content: "";
@@ -396,7 +290,7 @@ body.transitioning .actions a:hover {
   position: relative;
   display: inline-block;
   animation: sectionTitleGlow 6400ms ease-in-out infinite;
-  text-shadow: 0 10px 18px color-mix(in srgb, var(--shadow) 60%, transparent);
+  text-shadow: 0 10px 18px color-mix(in srgb, var(--shadow) 80%, transparent);
 }
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
@@ -478,7 +372,7 @@ body.transitioning .actions a:hover {
   margin: 0;
   animation: mutedBreath 8400ms ease-in-out infinite;
   animation-delay: 220ms;
-  text-shadow: 0 8px 18px color-mix(in srgb, var(--bg) 75%, transparent);
+  text-shadow: 0 14px 32px color-mix(in srgb, var(--bg) 60%, transparent);
 }
 .about-text__cta { color: var(--fg); font-weight: 600; line-height: 1.55; margin-top: clamp(12px, 2vw, 18px); }
 .about-photo {
@@ -558,7 +452,7 @@ body.transitioning .actions a:hover {
   line-height: 1.55;
   animation: mutedBreath 8600ms ease-in-out infinite;
   animation-delay: 360ms;
-  text-shadow: 0 6px 14px color-mix(in srgb, var(--bg) 72%, transparent);
+  text-shadow: 0 12px 28px color-mix(in srgb, var(--bg) 58%, transparent);
 }
 
 /* Motion safety */
