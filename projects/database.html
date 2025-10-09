@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cal Field Hockey — Database Management System</title>
+  <meta name="theme-color" content="#000000" />
+  <link href="../assets/css/theme.css" rel="stylesheet" />
+  <link href="../assets/css/project.css" rel="stylesheet" />
+</head>
+<body class="project-page">
+  <a class="monogram" href="../index.html#projects" title="Back">JS</a>
+
+  <header class="hero container">
+    <h1 class="title">Cal Field Hockey Database Management System</h1>
+    <p class="subtitle">From normalized schema to analytics and ML‑driven insights</p>
+  </header>
+
+  <main class="container stack">
+    <section class="section">
+      <div class="section-block">
+        <h2>Project Overview</h2>
+        <p class="lead">
+          Collaborated with Cal Club Field Hockey to design and implement a comprehensive database solution that
+          modernized data management across the club. The system spans player information, event management,
+          merchandise tracking, and predictive analytics for player evaluation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Database Relation and Schema</h2>
+        <p class="lead">
+          The schema follows strict normalization (BCNF) to ensure integrity, minimize redundancy, and optimize queries.
+          Relations were first specified in detail, then validated through EER modeling before implementation in MySQL Workbench.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Synthetic Data Generation</h2>
+        <p class="lead">
+          To protect sensitive information while demonstrating functionality, I generated synthetic data based on real patterns.
+          Logic constraints maintained realism (e.g., goals never exceeding shots), enabling realistic demos without exposing private data.
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="section-block">
+        <h2>Machine Learning Pipeline</h2>
+        <ul class="clean">
+          <li>Performance metrics: goals, assists, minutes played, ratings</li>
+          <li>Derived features: per‑90 stats, consistency scores</li>
+          <li>Modeling: Random Forest (100 estimators) with 5‑fold cross‑validation</li>
+          <li>Output: Player ranking and recognition support</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <h2>Results & Impact</h2>
+        <p class="lead">
+          Delivered a functional, production‑ready database replacing spreadsheets and paper workflows. The system enables
+          efficient entry, retrieval, and analytics across the club, while the ML model provides an objective perspective on
+          player evaluation and awards.
+        </p>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="section-block">
+        <h2>Technologies Used</h2>
+        <ul class="clean">
+          <li>MySQL Workbench</li>
+          <li>Python</li>
+          <li>Pandas & NumPy</li>
+          <li>Scikit‑Learn</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <h2>Key Achievements</h2>
+        <ul class="clean">
+          <li>62 normalized tables</li>
+          <li>BCNF normalization</li>
+          <li>92.5% model accuracy (internal validation)</li>
+          <li>Production‑ready deployment</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Demo</h2>
+        <div class="slideshow" data-slideshow>
+          <div class="slides">
+            <div class="slide active">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/DataBaseMySQL.png" alt="Database schema overview slide" loading="lazy" />
+                </div>
+                <figcaption>Database schema overview within MySQL Workbench</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/Simplified%20EER%20Diagram%20Cal%20Field%20Hockey.jpg" alt="Simplified EER diagram slide" loading="lazy" />
+                </div>
+                <figcaption>The simplified EER diagram for the database</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/relations.png" alt="Database relations diagram slide" loading="lazy" />
+                </div>
+                <figcaption>The database relations written out before implementation</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/calhistorical.png" alt="Historical data visualization slide" loading="lazy" />
+                </div>
+                <figcaption>Awards ML model performance table</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/davisranks.png" alt="Player ranking slide" loading="lazy" />
+                </div>
+                <figcaption>Model tested on players never seen during training/testing</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/syna.png" alt="Synthetic data generation slide A" loading="lazy" />
+                </div>
+                <figcaption>Synthetic data generation for assists</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/syng.png" alt="Synthetic data generation slide G" loading="lazy" />
+                </div>
+                <figcaption>Distribution of real data vs synthetic data for goals</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/syngs.png" alt="Synthetic data scoring slide" loading="lazy" />
+                </div>
+                <figcaption>Distribution of real data vs synthetic data for goals scored</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/synsh.png" alt="Synthetic data heatmap slide" loading="lazy" />
+                </div>
+                <figcaption>Distribution of real data vs synthetic data for shots</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/synsog.png" alt="Synthetic data shots on goal slide" loading="lazy" />
+                </div>
+                <figcaption>Distribution of real data vs synthetic data for shots on goal</figcaption>
+              </figure>
+            </div>
+            <div class="slide">
+              <figure>
+                <div class="slide-frame">
+                  <img src="../assets/slides/weightedScore.png" alt="Weighted scoring model slide" loading="lazy" />
+                </div>
+                <figcaption>Weighted scoring model for player evaluation</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="slideshow-controls">
+            <button class="slideshow-button" type="button" data-action="prev" aria-label="Show previous slide">Previous</button>
+            <span class="slideshow-status" aria-live="polite">1 / 21</span>
+            <button class="slideshow-button" type="button" data-action="next" aria-label="Show next slide">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Project Details</h2>
+        <div class="meta-grid">
+          <div><strong>Duration:</strong> 4 months</div>
+          <div><strong>Team Size:</strong> 8 members</div>
+          <div><strong>Role:</strong> Database Designer & ML Engineer</div>
+          <div><strong>Client:</strong> Cal Club Field Hockey</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <a class="btn" href="../index.html#projects">Back to Projects</a>
+      </div>
+    </section>
+  </main>
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-hidden="true">
+    <figure class="lightbox-content">
+      <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+      <img data-lightbox-img alt="" />
+      <figcaption data-lightbox-caption hidden></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function () {
+      const slideshows = document.querySelectorAll('[data-slideshow]');
+      slideshows.forEach((slideshow) => {
+        const slides = Array.from(slideshow.querySelectorAll('.slide'));
+        const status = slideshow.querySelector('.slideshow-status');
+        const prev = slideshow.querySelector('[data-action="prev"]');
+        const next = slideshow.querySelector('[data-action="next"]');
+        if (!slides.length || !prev || !next || !status) {
+          return;
+        }
+
+        let index = slides.findIndex((slide) => slide.classList.contains('active'));
+        if (index === -1) {
+          index = 0;
+        }
+
+        const setActive = (newIndex) => {
+          slides.forEach((slide, idx) => {
+            slide.classList.toggle('active', idx === newIndex);
+          });
+          status.textContent = newIndex + 1 + ' / ' + slides.length;
+        };
+
+        prev.addEventListener('click', () => {
+          index = (index - 1 + slides.length) % slides.length;
+          setActive(index);
+        });
+
+        next.addEventListener('click', () => {
+          index = (index + 1) % slides.length;
+          setActive(index);
+        });
+
+        setActive(index);
+      });
+
+      const lightbox = document.querySelector('[data-lightbox]');
+      if (lightbox) {
+        const lightboxImg = lightbox.querySelector('[data-lightbox-img]');
+        const lightboxCaption = lightbox.querySelector('[data-lightbox-caption]');
+        const closeButtons = Array.from(lightbox.querySelectorAll('[data-lightbox-close]'));
+        const primaryCloseButton = closeButtons[0] || null;
+        let lastFocusedImage = null;
+
+        const closeLightbox = () => {
+          if (!lightbox.classList.contains('open')) {
+            return;
+          }
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          if (lightboxImg) {
+            lightboxImg.removeAttribute('src');
+            lightboxImg.alt = '';
+          }
+          if (lightboxCaption) {
+            lightboxCaption.textContent = '';
+            lightboxCaption.hidden = true;
+          }
+          if (lastFocusedImage) {
+            lastFocusedImage.focus();
+            lastFocusedImage = null;
+          }
+        };
+
+        const openLightbox = (image) => {
+          if (!lightboxImg) {
+            return;
+          }
+          const figure = image.closest('figure');
+          const captionText = figure && figure.querySelector('figcaption')
+            ? figure.querySelector('figcaption').textContent.trim()
+            : '';
+          const source = image.currentSrc || image.src;
+
+          lightboxImg.src = source;
+          lightboxImg.alt = image.alt || '';
+          if (lightboxCaption) {
+            if (captionText) {
+              lightboxCaption.textContent = captionText;
+              lightboxCaption.hidden = false;
+            } else {
+              lightboxCaption.textContent = '';
+              lightboxCaption.hidden = true;
+            }
+          }
+
+          lastFocusedImage = image;
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          if (primaryCloseButton) {
+            primaryCloseButton.focus();
+          }
+        };
+
+        const slideImages = document.querySelectorAll('.slide img');
+        slideImages.forEach((img) => {
+          const label = img.alt ? 'View larger: ' + img.alt : 'View larger image';
+          img.setAttribute('tabindex', '0');
+          img.setAttribute('role', 'button');
+          img.setAttribute('aria-label', label);
+          img.addEventListener('click', () => openLightbox(img));
+          img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openLightbox(img);
+            }
+          });
+        });
+
+        closeButtons.forEach((btn) => {
+          btn.addEventListener('click', closeLightbox);
+        });
+
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+            event.preventDefault();
+            closeLightbox();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/* Theme tokens shared across pages. Edit these six to restyle. */
+:root {
+  /* Primary 6 parameters */
+  --theme-primary: #164ea9;
+  --theme-surface: #023047;
+  --theme-text: #ffb703;
+  --theme-muted: #8ecae6;
+  --theme-accent: #219ebc;
+  --theme-accent-alt: #ffb703;
+
+  /* Bridged variables used throughout styles */
+  --bg: var(--theme-surface);
+  --fg: var(--theme-text);
+  --muted: var(--theme-muted);
+  --border: var(--theme-muted);
+  --border-hover: var(--theme-primary);
+  --shadow: rgba(0,0,0,0.35);
+  --surface: color-mix(in srgb, var(--theme-text) 6%, transparent);
+  --surface-hover: color-mix(in srgb, var(--theme-text) 10%, transparent);
+  --inner-highlight: color-mix(in srgb, var(--theme-text) 5%, transparent);
+  --sheen-linear: color-mix(in srgb, var(--theme-text) 10%, transparent);
+  --sheen-radial: color-mix(in srgb, var(--theme-text) 8%, transparent);
+  --dot-hover: var(--theme-accent-alt);
+
+  /* Motion curve */
+  --timing: cubic-bezier(0.22, 1, 0.36, 1);
+}
