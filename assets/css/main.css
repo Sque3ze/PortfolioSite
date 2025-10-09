@@ -11,21 +11,22 @@
 :root {
   /* Edit only these six */
 
+  /*
   --theme-primary:     #164ea9;
   --theme-surface:     #023047;
   --theme-text:        #ffb703;
   --theme-muted:       #9dd4ed;
   --theme-accent:      #219ebc;
   --theme-accent-alt:  #ffb703;
-
-  /*
+  */
+  
   --theme-primary:     #0E141B;
   --theme-surface:     #0B0F13;
   --theme-text:        #E6E8EB;
   --theme-muted:       #6B7280;
   --theme-accent:      #2DD4BF;
   --theme-accent-alt:  #34D399;
-  */
+  
 
   /* Bridge variables used throughout styles (no need to edit) */
   --bg: var(--theme-surface);
