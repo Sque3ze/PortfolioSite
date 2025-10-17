@@ -65,10 +65,10 @@ body {
   .hero__title {
     background-image: linear-gradient(
       120deg,
-      color-mix(in srgb, var(--fg) 96%, var(--theme-accent) 4%) 0%,
-      color-mix(in srgb, var(--fg) 92%, var(--theme-accent) 8%) 38%,
-      color-mix(in srgb, var(--fg) 90%, var(--theme-accent-alt) 10%) 52%,
-      color-mix(in srgb, var(--fg) 97%, transparent) 100%
+      color-mix(in srgb, var(--fg) 94%, #ffffff 6%) 0%,
+      color-mix(in srgb, var(--fg) 90%, var(--theme-accent) 10%) 35%,
+      color-mix(in srgb, var(--fg) 88%, var(--theme-accent) 12%) 55%,
+      color-mix(in srgb, var(--fg) 96%, #ffffff 4%) 100%
     );
     background-size: 220% auto;
     background-position: 0% 50%;

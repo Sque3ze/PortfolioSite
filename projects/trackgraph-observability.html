@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TrackGraph — Spotify History Visualizer</title>
+  <title>TrackGraph Observability — Telemetry Infrastructure</title>
   <meta name="theme-color" content="#000000" />
   <link href="../assets/css/theme.css" rel="stylesheet" />
   <link href="../assets/css/project.css" rel="stylesheet" />
@@ -14,8 +14,8 @@
   </a>
 
   <header class="hero container">
-    <h1 class="title">TrackGraph</h1>
-    <p class="subtitle">Spotify Listening History Analysis & Visualization</p>
+    <h1 class="title">TrackGraph Observability</h1>
+    <p class="subtitle">Pulumi-Powered Telemetry & Delivery Platform</p>
   </header>
 
   <main class="container stack">
@@ -23,20 +23,22 @@
       <div class="section-block">
         <h2>Project Overview</h2>
         <p class="lead">
-          Born from a mix of data analysis curiosity and a passion for music, TrackGraph is a full‑stack
-          web application for exploring and visualizing personal Spotify listening history. The goal was
-          to build a smooth experience that surfaces meaningful insights about habits, preferences, and trends.
+          TrackGraph Observability is the infrastructure-as-code backbone behind the TrackGraph web app.
+          The stack provisions every AWS service needed for app delivery and end-to-end telemetry using Pulumi with Python.
+          It deploys the production backend on App Runner, instruments it with OpenTelemetry, and funnels traces, metrics,
+          and logs into managed observability services so feature work ships with real feedback loops.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-block">
-        <h2>Why the Visualizer?</h2>
+        <h2>Why Build an Observability Plane?</h2>
         <p class="lead">
-          Platforms like Spotify Wrapped, Apple Music Replay, and third‑party tools (Last.fm, Stats.fm) prove user
-          appetite for listening insights. But many experiences present similar summaries with limited interactivity.
-          TrackGraph experiments with more expressive visuals, deeper drill‑downs, and a modern UI.
+          I wanted to treat the TrackGraph app like a production system: infrastructure defined in code,
+          repeatable deployments, and telemetry that answers <em>why</em> something happened. Standing up an AWS-native stack
+          forced me to learn how modern teams wire traces, metrics, and logs together, and how to validate that the data
+          I'm collecting is trustworthy before anything breaks in production.
         </p>
       </div>
     </section>
@@ -45,19 +47,69 @@
       <div class="section-block">
         <h2>Technologies Used</h2>
         <ul class="clean">
-          <li>FastAPI, Python</li>
-          <li>Pandas, NumPy</li>
-          <li>React, D3.js</li>
-          <li>AWS (S3)</li>
-          <li>Git & GitHub</li>
+          <li>Pulumi (Python)</li>
+          <li>AWS App Runner</li>
+          <li>Amazon Managed Prometheus (AMP)</li>
+          <li>Amazon Managed Grafana</li>
+          <li>AWS Lambda & CloudWatch</li>
+          <li>AWS CloudFront & S3</li>
+          <li>AWS Secrets Manager</li>
+          <li>OpenTelemetry / ADOT collectors</li>
+          <li>GitHub Actions CI</li>
         </ul>
       </div>
       <div class="section-block">
-        <h2>Key Achievements</h2>
+        <h2>Key Outcomes</h2>
         <ul class="clean">
-          <li>Interactive visualizer for Spotify data</li>
-          <li>Deployed with AWS integration</li>
-          <li>Clean UX for exploring time‑based trends</li>
+          <li>Containerized backend with trace instrumentation deployed via App Runner</li>
+          <li>Prometheus metrics pipeline with managed collectors and Grafana dashboards</li>
+          <li>Serverless log enrichment converting CloudFront logs into actionable metrics</li>
+          <li>Repeatable Pulumi stack that mirrors production defaults but can target any AWS account</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Stack Components</h2>
+        <div>
+          <p><strong>Backend Delivery:</strong> App Runner hosts the TrackGraph backend container, pulls secrets from AWS Secrets Manager, and scales on demand. OpenTelemetry auto-instrumentation ships traces directly to AWS X-Ray and the Prometheus collector plane.</p>
+          <p><strong>Observability Plane:</strong> An App Runner ADOT sidecar and a Fargate-based collector scrape metrics, send them to Amazon Managed Prometheus, and expose them to a managed Grafana workspace for dashboards and alerting.</p>
+          <p><strong>Data & Edge:</strong> Three S3 buckets separate static frontend assets, CloudFront logs, and Spotify data. A CloudFront distribution fronts the static site, while a Lambda function parses access logs into CloudWatch custom metrics that feed Grafana widgets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <h2>Repository Layout</h2>
+        <ul class="clean">
+          <li><code>__main__.py</code> wires together the component modules and exports stack outputs for other services.</li>
+          <li><code>components/</code> contains custom Pulumi <code>ComponentResource</code> wrappers for storage, edge, backend, and observability.</li>
+          <li><code>infra/</code> holds shared config helpers, optional prerequisite provisioning, and policy templates.</li>
+          <li><code>collector-app-runner/</code> packages the ADOT proxy and collector config for the App Runner telemetry sidecar.</li>
+          <li><code>lambda_fn/</code> includes the CloudFront log parser Lambda plus reusable parser and metrics libraries.</li>
+          <li><code>tests/</code> runs pytest coverage over the log parser and metric publisher utilities.</li>
+          <li><code>Pulumi.yaml</code> and <code>Pulumi.&lt;stack&gt;.yaml</code> define project metadata and per-env configuration (see the example template).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="section-block">
+        <h2>Configuration & CI</h2>
+        <p>
+          Pulumi config keys live under the <code>trackgraph</code> namespace, mirroring production defaults so a new stack can launch with minimal overrides.
+          GitHub Actions enforces formatting with Ruff, Black, and isort, runs pytest on the Lambda parser modules, and can execute a Pulumi preview
+          whenever AWS credentials are supplied—never a blind <code>pulumi up</code> from CI.
+        </p>
+      </div>
+      <div class="section-block">
+        <h2>Observability Validation</h2>
+        <ul class="clean">
+          <li>Traces confirmed in AWS X-Ray once the App Runner backend comes online.</li>
+          <li>Prometheus remote write verified through managed Grafana dashboards.</li>
+          <li>CloudFront log ingestion triggers the Lambda and emits metrics in the <code>TrackGraph/CloudFront</code> namespace.</li>
         </ul>
       </div>
     </section>
@@ -70,39 +122,23 @@
             <div class="slide active">
               <figure>
                 <div class="slide-frame">
-                  <img src="../assets/TrackGraphDemo/tg1.png" alt="TrackGraph demo screenshot 1" loading="lazy" />
+                  <img src="../assets/ObservabilityDemo/obs1.png" alt="Pulumi stack graph highlighting backend and edge components" loading="lazy" />
                 </div>
-                <figcaption>Site Landing Page</figcaption>
+                <figcaption>Pulumi stack graph showing backend and edge resources wired for TrackGraph.</figcaption>
               </figure>
             </div>
             <div class="slide">
               <figure>
                 <div class="slide-frame">
-                  <img src="../assets/TrackGraphDemo/tg2.png" alt="TrackGraph demo screenshot 2" loading="lazy" />
+                  <img src="../assets/ObservabilityDemo/obs2.png" alt="Pulumi stack graph focusing on observability and storage resources" loading="lazy" />
                 </div>
-                <figcaption>After Clicking Sample Data</figcaption>
-              </figure>
-            </div>
-            <div class="slide">
-              <figure>
-                <div class="slide-frame">
-                  <img src="../assets/TrackGraphDemo/tg3.png" alt="TrackGraph demo screenshot 3" loading="lazy" />
-                </div>
-                <figcaption>Swapping over to Album Bubbles</figcaption>
-              </figure>
-            </div>
-            <div class="slide">
-              <figure>
-                <div class="slide-frame">
-                  <img src="../assets/TrackGraphDemo/tg4.png" alt="TrackGraph demo screenshot 4" loading="lazy" />
-                </div>
-                <figcaption>View of Top Stats Section</figcaption>
+                <figcaption>Other half od the Pulumi stack graph.</figcaption>
               </figure>
             </div>
           </div>
           <div class="slideshow-controls">
             <button class="slideshow-button" type="button" data-action="prev" aria-label="Show previous slide">Previous</button>
-            <span class="slideshow-status" aria-live="polite">1 / 4</span>
+            <span class="slideshow-status" aria-live="polite">1 / 2</span>
             <button class="slideshow-button" type="button" data-action="next" aria-label="Show next slide">Next</button>
           </div>
         </div>
@@ -113,11 +149,17 @@
       <div class="section-block">
         <h2>Project Details</h2>
         <div class="meta-grid">
-          <div><strong>Timeline:</strong> September 2025 – Present</div>
+          <div><strong>Timeline:</strong> Q4 2024 – Present</div>
           <div><strong>Team:</strong> Solo Project</div>
-          <div><strong>Role:</strong> Full‑Stack Developer</div>
-          <div><strong>Status:</strong> App deployed</div>
+          <div><strong>Role:</strong> Infrastructure & Observability Engineer</div>
+          <div><strong>Status:</strong> Stack deployed</div>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-block">
+        <p>Questions about the stack or telemetry approach? Reach out at <a href="mailto:josephsaldivarg@gmail.com">josephsaldivarg@gmail.com</a>.</p>
       </div>
     </section>
 
